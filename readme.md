@@ -34,10 +34,10 @@ repo2docker  --no-run --image-name <repository name>  ./    jupyter lab --ip 0.0
 ### lab-hadoop
 ```bash
 # building the image:
-docker rmi lab-hadoop:latest
+docker rmi lab-hadoop:latest -f
 repo2docker --no-run --image-name lab-hadoop  ./ jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
 # runing the image
-docker run -it -p 8888:8888  -v $(echo ~):$(echo ~)/local-home lab-hadoop jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
+docker run -it -p 8888:8888 -u jovyan -v $(echo ~):$(echo ~)/local-home lab-hadoop jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
 ``` 
 
 
