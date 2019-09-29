@@ -21,9 +21,10 @@
 </div>
 <!-- /ds header -->
 
-## Running a repository locally
+## Running a thedatasociety's repository locally
 
-Within the repository folder:
+Clone the repository. Enter the folder. Within the repository folder, run:
+
 ```bash
 # removing image if it exists
 docker rmi ${PWD##*/}:latest -f
