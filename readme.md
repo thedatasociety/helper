@@ -23,21 +23,14 @@
 
 ## Running a repository locally
 
-Within the repository folder
+Within the repository folder:
 ```bash
+# removing image if it exists
+docker rmi ${PWD##*/}:latest -f
 # building the image:
-repo2docker  --no-run --image-name <repository name>  ./    jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
-# runing the image
-
-``` 
-
-### lab-hadoop
-```bash
-# building the image:
-docker rmi lab-hadoop:latest -f
-repo2docker --no-run --image-name lab-hadoop  ./ jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
-# runing the image
-docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home lab-hadoop jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
+repo2docker  --no-run --image-name ${PWD##*/}  ./  jupyter lab --ip 0.0.0.0 --NotebookApp.token=''# runing the image
+# running the built image
+docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/}
 ``` 
 
 
