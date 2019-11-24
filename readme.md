@@ -29,9 +29,9 @@ Clone the repository. Enter the folder. Within the repository folder, run:
 # removing image if it exists
 docker rmi ${PWD##*/}:latest -f
 # building the image:
-repo2docker  --no-run --image-name ${PWD##*/}  ./  jupyter lab --ip 0.0.0.0 --NotebookApp.token=''# runing the image
+repo2docker  --no-run --image-name ${PWD##*/}  ./  jupyter lab 
 # running the built image
-docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/}
+docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/} jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
 ``` 
 
 
