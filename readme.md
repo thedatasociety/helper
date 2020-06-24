@@ -36,8 +36,8 @@ docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/} jupyter
 
 or 
 ```bash
-docker rmi ${PWD##*/}:latest -f
-repo2docker  --no-run --image-name ${PWD##*/}  ./  jupyter lab 
+docker rmi ${PWD##*/}:latest -f && 
+repo2docker  --no-run --image-name ${PWD##*/}  ./  jupyter lab  &&
 docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/} jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
 ```
 http://localhost:8888
