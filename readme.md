@@ -31,14 +31,14 @@ docker rmi ${PWD##*/}:latest -f
 # building the image:
 repo2docker  --no-run --image-name ${PWD##*/}  ./  jupyter lab 
 # running the built image
-docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/} jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
+docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/} jupyter lab --ip 0.0.0.0 --NotebookApp.token=''  --no-browser
 ``` 
 
 or 
 ```bash
 docker rmi ${PWD##*/}:latest -f && 
 repo2docker  --no-run --image-name ${PWD##*/}  ./  jupyter lab  &&
-docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/} jupyter lab --ip 0.0.0.0 --NotebookApp.token=''
+docker run -it -p 8888:8888 -v $(echo ~):$(echo ~)/local-home ${PWD##*/} jupyter lab --ip 0.0.0.0 --NotebookApp.token=''  --no-browser
 ```
 http://localhost:8888
 
