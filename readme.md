@@ -23,6 +23,12 @@
 
 ## Running a thedatasociety's repository locally
 
+Install minimal packages:
+```
+sudo apt install python3-pip
+sudo pip3 install jupyter-repo2docker
+```
+
 Clone the repository. Enter the folder. Within the repository folder, run:
 
 ```bash
